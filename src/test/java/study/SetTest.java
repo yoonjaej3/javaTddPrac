@@ -33,15 +33,17 @@ public class SetTest {
     }
 
     @ParameterizedTest
+    @DisplayName("Set contains Test")
     @ValueSource(ints={1,2,3})
     void contains(int element) {
         System.out.println(numbers);
         assertThat(numbers.contains(element)).isTrue();
     }
-//
+
     @ParameterizedTest
+    @DisplayName("Set contains Test T/F")
     @CsvSource(value = {"1:true", "2:true", "3:true", "4:false", "5:false"}, delimiter = ':')
-    void toLowerCase_ShouldGenerateTheExpectedLowercaseValue(int input,String expected) {
+    void containsTrueFase(int input,String expected) {
         String actual=Boolean.toString(numbers.contains(input));
         assertEquals(expected,actual);
     }
