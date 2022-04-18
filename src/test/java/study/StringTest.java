@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Scanner;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 public class StringTest {
@@ -52,5 +54,47 @@ public class StringTest {
 //            s.charAt(4); }).isInstanceOf(IndexOutOfBoundsException.class)
 //                .hasMessageContaining("String index out of range: 4");
 //
+    }
+
+    @Test
+    @DisplayName("문자열 계산기")
+    void stringLength(){
+
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("문자열을 입력하세요.\n");
+        String value= "2 + 3 * 4 / 2";
+        String[] values=value.split(" ");
+
+        String symbol="";
+        int num=0;
+        for(int i=0;i<values.length;i++){
+            if(values[i].equalsIgnoreCase("+") ||values[i].equalsIgnoreCase("-")
+            ||values[i].equalsIgnoreCase("*") || values[i].equalsIgnoreCase("/")){
+                symbol=values[i];
+            }
+            else{
+                if(!symbol.isEmpty()) {
+                    switch (symbol) {
+                        case "+":
+                            num= num+Integer.parseInt(values[i]);
+                            break;
+                        case "-":
+                            num= num-Integer.parseInt(values[i]);
+                            break;
+                        case "*":
+                            num= num*Integer.parseInt(values[i]);
+                            break;
+                        case "/":
+                            num= num/Integer.parseInt(values[i]);
+                            break;
+                    }
+                    symbol="";
+                }
+                else
+                    num=Integer.parseInt(values[i]);
+            }
+        }
+       assertEquals(num,10);
+
     }
 }
