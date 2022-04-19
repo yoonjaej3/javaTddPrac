@@ -1,10 +1,2 @@
-# NEXTSTEP 코드 리뷰 문서
-
----
-## [NEXTSTEP의 온라인 코드 리뷰 과정](./codereview/README.md)
-
----
-## [NEXTSTEP 플레이그라운드의 미션 진행 과정](./playground/README.md)
-
----
-## [NEXTSTEP의 프리코스 과제 제출 방법](./precourse/README.md)
+# 자바 플레이그라운드 with TDD, 클린코드 
+단위테스트, TDD, 상속 인터페이스, 함수형 프로그래밍을 연습하기 위한 저장소입니다.
